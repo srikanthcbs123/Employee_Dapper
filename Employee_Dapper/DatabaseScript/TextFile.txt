@@ -1,0 +1,43 @@
+﻿Create database Northwind_DB
+Use Northwind_DB
+Go
+Create table Department(deptid int identity(1,1),
+deptname varchar(max),deptlocation varchar(max))
+---------------------
+Create procedure Usp_AddDepartment(@deptname varchar(max),@deptlocation varchar(max),@insertedvalue int output)
+as 
+begin
+set nocount on--it prvents no of rows effected. 
+insert into Department(deptname,deptlocation) values(@deptname,@deptlocation)
+set @insertedvalue=SCOPE_IDENTITY()
+end
+-----------
+Create procedure Usp_UpdateDepartment(@deptid int,@deptname varchar(max),@deptlocation varchar(max))
+as 
+begin
+set nocount on--it prvents no of rows effected. 
+Update Department set deptname=@deptname,deptlocation=@deptlocation where deptid=@deptid
+end
+--------------------
+Create procedure Usp_DeleteDepartment(@deptid int)
+as 
+begin
+set nocount on--it prvents no of rows effected. 
+Delete from Department where deptid=@deptid
+end
+----------------------
+Create procedure Usp_GetDepartment
+as 
+begin
+set nocount on--it prvents no of rows effected. 
+Select * from Department
+end
+--------------
+Create procedure Usp_GetDepartmentById(@deptid int)
+as 
+begin
+set nocount on--it prvents no of rows effected. 
+Select * from Department where deptid=@deptid
+end
+-------------
+select * from Department
