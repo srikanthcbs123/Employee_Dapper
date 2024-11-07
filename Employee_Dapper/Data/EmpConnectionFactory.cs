@@ -26,7 +26,7 @@ namespace Employee_Dapper.Data
 
         public IDbConnection Northwind_DBSqlConnectionString()
         {
-            var connStr = Convert.ToString(_config.GetSection("ConnectionStrings:hotelmanagementsqlConnectionString").Value);
+            var connStr = Convert.ToString(_config.GetSection("ConnectionStrings:Northwind_DBSqlConnectionString").Value);
             // Creates an IDbConnection Object to store the sqlconnection.
             IDbConnection _connection = new SqlConnection(connStr);
             return _connection;
