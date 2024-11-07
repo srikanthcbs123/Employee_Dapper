@@ -18,5 +18,15 @@
         public static readonly string GetDepartmentByDeptId = "Usp_GetDepartmentById";
         #endregion
 
+
+
+        #region OrderStoredProcedures
+        public static readonly string AddOrder = "Usp_AddOrder";
+        public static readonly string UpdateOrder = "Usp_UpdateOrder";
+        public static readonly string DeleteOrder = "Usp_DeleteOrder";
+        public static readonly string GetOrder = "Usp_GetOrder";
+        public static readonly string GetOrderById = "Usp_GetOrderById";
+        #endregion
+
     }
 }

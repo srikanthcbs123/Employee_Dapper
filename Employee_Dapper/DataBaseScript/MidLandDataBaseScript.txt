@@ -1,0 +1,41 @@
+﻿Create DataBase MIDLAND
+Use MIDLAND
+-------------------------
+Create table Orders(orderid int identity(1,1),ordername varchar(max),orderlocation varchar(max))
+---------------------
+Create procedure Usp_AddOrder(@ordername varchar(max),@orderlocation varchar(max),@insertedvalue int output)
+as 
+begin
+set nocount on--it prvents no of rows effected. 
+insert into Orders(ordername,orderlocation) values(@ordername,@orderlocation)
+set @insertedvalue=SCOPE_IDENTITY()
+end
+-----------
+Create procedure Usp_UpdateOrder(@orderid int,@ordername varchar(max),@orderlocation varchar(max))
+as 
+begin
+set nocount on--it prvents no of rows effected. 
+Update Orders set ordername=@ordername,orderlocation=@orderlocation where orderid=@orderid
+end
+--------------------
+Create procedure Usp_DeleteOrder(@orderid int)
+as 
+begin
+set nocount on--it prvents no of rows effected. 
+Delete from Orders where orderid=@orderid
+end
+----------------------
+Create procedure Usp_GetOrder
+as 
+begin
+set nocount on--it prvents no of rows effected. 
+Select * from Orders
+end
+--------------
+Create procedure Usp_GetOrderById(@orderid int)
+as 
+begin
+set nocount on--it prvents no of rows effected. 
+Select * from Orders where orderid=@orderid
+end
+-------------
