@@ -18,7 +18,7 @@ namespace Employee_Dapper.Data
         // string connectionString = "data source=DESKTOP-AAO14OC;Encrypt=True;TrustServerCertificate=True;initial catalog=hotelmanagement;integrated security=yes";
         public IDbConnection MidLandSqlConnectionString()
         {
-            var connStr = Convert.ToString(_config.GetSection("ConnectionStrings:hotelmanagementsqlConnectionString").Value);
+            var connStr = Convert.ToString(_config.GetSection("ConnectionStrings:MidLandSqlConnectionString").Value);
             //Creates an IDbConnection Object to store the sqlconnection.
             IDbConnection con= new SqlConnection(connStr);
             return con;

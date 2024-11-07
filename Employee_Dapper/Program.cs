@@ -13,6 +13,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IEmployeeService,EmployeeServices>();
+builder.Services.AddScoped<IOrdersRepository, OrdersRepository>();
+builder.Services.AddScoped<IOrdersService, OrdersService>();
 builder.Services.AddScoped<IEmpConnectionFactory, EmpConnectionFactory>();
 builder.Services.AddCors(options =>
 {
